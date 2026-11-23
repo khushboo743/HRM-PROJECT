@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5faf7">
+    <meta name="description" content="AURA HR — an elegant, people-first workspace for your team.">
+    <title>AURA HR — People, in balance</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/vendor/chart.umd.js"></script>
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <a class="brand" href="#" data-page="pulse" aria-label="AURA HR home">
+          <span class="brand-mark"><span></span><span></span><span></span></span>
+          <span class="brand-name">AURA <b>HR</b><small>PEOPLE, IN BALANCE</small></span>
+        </a>
+
+        <div class="nav-caption">WORKSPACE</div>
+        <nav class="main-nav">
+          <a class="nav-link active" href="#pulse" data-page="pulse">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="8" rx="2"/><rect x="14" y="3" width="7" height="5" rx="2"/><rect x="14" y="11" width="7" height="10" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/></svg><span>HR Pulse</span><i class="nav-dot"></i>
+          </a>
+          <a class="nav-link" href="#directory" data-page="directory">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.8 20c.5-3.3 2.5-5 6.2-5s5.8 1.7 6.2 5M16 5.2a3.5 3.5 0 0 1 0 6.6M17 15c2.6.4 4 2.1 4.3 5"/></svg><span>Talent Directory</span>
+          </a>
+          <a class="nav-link" href="#attendance" data-page="attendance">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span>Live Shift</span>
+          </a>
+          <a class="nav-link" href="#timeoff" data-page="timeoff">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 10h18m-13 4h3m-3 3h7"/></svg><span>Time-Off Hub</span>
+          </a>
+          <a class="nav-link" href="#payroll" data-page="payroll">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 10h18m-13 5h4"/></svg><span>Payroll &amp; Payslips</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-spacer"></div>
+        <div class="sidebar-note">
+          <span class="note-spark">✳</span>
+          <strong>People first, always.</strong>
+          <p>Great work starts with a little more balance.</p>
+        </div>
+        <button class="profile-button" type="button" aria-label="HR Admin profile">
+          <span class="avatar avatar-admin">HR</span>
+          <span class="profile-copy"><strong>HR Admin</strong><small>Workspace owner</small></span>
+          <svg class="profile-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4"/></svg>
+        </button>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <div class="mobile-brand"><span class="brand-mark"><span></span><span></span><span></span></span><b>AURA HR</b></div>
+          <div class="topbar-heading">
+            <span class="eyebrow" id="today-label"></span>
+            <h1 id="greeting">Welcome back, <span>HR Admin</span> <span class="wave">✦</span></h1>
+          </div>
+          <div class="topbar-actions">
+            <label class="global-search">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>
+              <input id="global-search" type="search" placeholder="Search anything..." autocomplete="off" aria-label="Search employees">
+              <kbd>⌘ K</kbd>
+            </label>
+            <button class="icon-button notification-button" type="button" aria-label="Notifications">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9m-8 13h4"/></svg><i></i>
+            </button>
+            <button class="button button-outline top-export" type="button" data-action="export-csv" title="Export employee data as CSV">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v3h16v-3"/></svg><span>Export CSV</span>
+            </button>
+            <button class="button button-primary top-add" type="button" data-action="add-employee"><span>＋</span> Add Employee</button>
+          </div>
+        </header>
+
+        <div id="app-error" class="app-error" role="alert" hidden></div>
+        <section id="page-content" aria-live="polite"></section>
+      </main>
+    </div>
+
+    <dialog id="app-modal" class="app-modal" aria-labelledby="modal-title">
+      <div id="modal-content"></div>
+    </dialog>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+{
+  "employees": [
+    {
+      "id": "EMP001",
+      "firstName": "Ava",
+      "lastName": "Patel",
+      "email": "ava.patel@example.com",
+      "department": "Engineering",
+      "position": "Software Engineer",
+      "hireDate": "2022-03-14",
+      "employmentStatus": "active"
+    },
+    {
+      "id": "EMP002",
+      "firstName": "Liam",
+      "lastName": "Chen",
+      "email": "liam.chen@example.com",
+      "department": "Human Resources",
+      "position": "HR Manager",
+      "hireDate": "2020-07-06",
+      "employmentStatus": "active"
+    },
+    {
+      "id": "EMP003",
+      "firstName": "Sofia",
+      "lastName": "Garcia",
+      "email": "sofia.garcia@example.com",
+      "department": "Finance",
+      "position": "Financial Analyst",
+      "hireDate": "2021-11-01",
+      "employmentStatus": "active"
+    },
+    {
+      "id": "EMP004",
+      "firstName": "Noah",
+      "lastName": "Williams",
+      "email": "noah.williams@example.com",
+      "department": "Marketing",
+      "position": "Marketing Specialist",
+      "hireDate": "2023-01-23",
+      "employmentStatus": "active"
+    },
+    {
+      "id": "EMP005",
+      "firstName": "Mia",
+      "lastName": "Johnson",
+      "email": "mia.johnson@example.com",
+      "department": "Engineering",
+      "position": "Product Designer",
+      "hireDate": "2022-09-12",
+      "employmentStatus": "active"
+    },
+    {
+      "id": "EMP006",
+      "firstName": "Ethan",
+      "lastName": "Kim",
+      "email": "ethan.kim@example.com",
+      "department": "Operations",
+      "position": "Operations Coordinator",
+      "hireDate": "2024-02-05",
+      "employmentStatus": "active"
+    }
+  ],
+  "attendance": [
+    {
+      "id": "ATT001",
+      "employeeId": "EMP001",
+      "date": "2025-03-03",
+      "checkIn": "09:02",
+      "checkOut": "17:31",
+      "status": "present"
+    },
+    {
+      "id": "ATT002",
+      "employeeId": "EMP002",
+      "date": "2025-03-03",
+      "checkIn": "08:48",
+      "checkOut": "17:10",
+      "status": "present"
+    },
+    {
+      "id": "ATT003",
+      "employeeId": "EMP003",
+      "date": "2025-03-03",
+      "checkIn": null,
+      "checkOut": null,
+      "status": "leave"
+    },
+    {
+      "id": "ATT004",
+      "employeeId": "EMP004",
+      "date": "2025-03-03",
+      "checkIn": "09:21",
+      "checkOut": "17:45",
+      "status": "late"
+    },
+    {
+      "id": "ATT005",
+      "employeeId": "EMP005",
+      "date": "2025-03-03",
+      "checkIn": "08:56",
+      "checkOut": "17:22",
+      "status": "present"
+    },
+    {
+      "id": "ATT006",
+      "employeeId": "EMP006",
+      "date": "2025-03-03",
+      "checkIn": null,
+      "checkOut": null,
+      "status": "absent"
+    },
+    {
+      "employeeId": "EMP001",
+      "date": "2026-11-22",
+      "checkIn": "19:35",
+      "checkOut": "19:35",
+      "status": "present",
+      "id": "ATT007"
+    }
+  ],
+  "leaveRequests": [
+    {
+      "id": "LEV001",
+      "employeeId": "EMP001",
+      "type": "annual",
+      "startDate": "2025-04-14",
+      "endDate": "2025-04-18",
+      "status": "pending",
+      "reason": "Family trip"
+    },
+    {
+      "id": "LEV002",
+      "employeeId": "EMP002",
+      "type": "sick",
+      "startDate": "2025-02-10",
+      "endDate": "2025-02-11",
+      "status": "approved",
+      "reason": "Recovery"
+    },
+    {
+      "id": "LEV003",
+      "employeeId": "EMP003",
+      "type": "annual",
+      "startDate": "2025-05-05",
+      "endDate": "2025-05-09",
+      "status": "pending",
+      "reason": "Personal leave"
+    },
+    {
+      "id": "LEV004",
+      "employeeId": "EMP004",
+      "type": "personal",
+      "startDate": "2025-03-21",
+      "endDate": "2025-03-21",
+      "status": "rejected",
+      "reason": "Schedule conflict"
+    }
+  ]
+}
