@@ -5,6 +5,7 @@ const express = require("express");
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
 const DATABASE_PATH = path.join(__dirname, "database.json");
+const PUBLIC_PATH = path.join(__dirname, "public");
 const collections = {
   employees: "EMP",
   attendance: "ATT",
@@ -15,7 +16,7 @@ let writeQueue = Promise.resolve();
 
 app.use(express.json({ limit: "100kb" }));
 app.use("/vendor", express.static(path.join(__dirname, "node_modules", "chart.js", "dist")));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(PUBLIC_PATH));
 
 function isNonEmptyString(value) {
   return typeof value === "string" && value.trim().length > 0;
@@ -174,6 +175,7 @@ app.use("/api/employees", createCrudRoutes("employees", collections.employees, v
 app.use("/api/attendance", createCrudRoutes("attendance", collections.attendance, validateAttendance));
 app.use("/api/leave-requests", createCrudRoutes("leaveRequests", collections.leaveRequests, validateLeaveRequest));
 
+app.get("*", (req, res) => res.sendFile(path.join(PUBLIC_PATH, "index.html")));
 app.use((req, res) => res.status(404).json({ error: "Endpoint not found" }));
 app.use((error, req, res, next) => {
   if (res.headersSent) return next(error);
